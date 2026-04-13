@@ -285,4 +285,4 @@ INSERT INTO `player_info` (`user_id`, `real_name`, `height`, `weight`, `position
 
 - 后端：Spring Boot 2.7.x, MyBatis Plus, Spring Security, JWT, Redis
 - 前端：Vue 3, Element Plus, Axios, Pinia
-- 数据库：MySQL
+- 数据库：MySQL, Redis
