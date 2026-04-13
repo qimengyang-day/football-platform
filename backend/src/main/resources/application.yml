@@ -1,0 +1,37 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/football_platform?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  redis:
+    host: localhost
+    port: 6379
+    database: 2
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  web:
+    resources:
+      static-locations: classpath:/static/,file:../frontend/dist/,file:${user.dir}/../uploads/
+  mvc:
+    static-path-pattern: /uploads/**
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+
+mybatis:
+  configuration:
+    # 将数据库下划线字段名自动映射到 Java 驼峰字段名（如 home_score -> homeScore）
+    map-underscore-to-camel-case: true
+
+# 文件上传配置
+file:
+  upload:
+    path: uploads/
+  access:
+    url: /uploads/
